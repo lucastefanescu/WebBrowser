@@ -32,6 +32,10 @@ Public Class Form1
     Private Sub WebBrowserEscape_Navigated(sender As Object, e As WebBrowserNavigatedEventArgs) Handles WebBrowserEscape.Navigated
         txtUrl.Text = WebBrowserEscape.Url.ToString
         webIcons()
+
+
+        TabControl1.SelectedTab.Text = WebBrowserEscape.DocumentTitle.ToString
+        'says the page name on the tab
     End Sub
     Private Sub txturl_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtUrl.KeyUp
         If e.KeyCode = Keys.Enter Then
