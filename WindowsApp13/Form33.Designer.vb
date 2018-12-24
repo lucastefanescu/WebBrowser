@@ -70,6 +70,9 @@ Partial Class Form1
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.WebBrowserEscape = New System.Windows.Forms.WebBrowser()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         Me.MenuStrip1.SuspendLayout()
         Me.toolstripNavigator.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -309,7 +312,7 @@ Partial Class Form1
         '
         Me.toolstripNavigator.BackColor = System.Drawing.Color.SkyBlue
         Me.toolstripNavigator.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.toolstripNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnBack, Me.btnForward, Me.txtUrl, Me.btnReload, Me.cmbSearchEngines, Me.txtUrlSearchEngines, Me.btnDownloads, Me.BtnHome})
+        Me.toolstripNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnBack, Me.btnForward, Me.txtUrl, Me.btnReload, Me.cmbSearchEngines, Me.txtUrlSearchEngines, Me.btnDownloads, Me.BtnHome, Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripLabel1})
         Me.toolstripNavigator.Location = New System.Drawing.Point(0, 24)
         Me.toolstripNavigator.Name = "toolstripNavigator"
         Me.toolstripNavigator.Size = New System.Drawing.Size(1498, 33)
@@ -439,6 +442,34 @@ Partial Class Form1
         Me.TabControl1.Size = New System.Drawing.Size(1498, 726)
         Me.TabControl1.TabIndex = 2
         '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.AutoSize = False
+        Me.ToolStripButton1.BackColor = System.Drawing.Color.Transparent
+        Me.ToolStripButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(50, 30)
+        Me.ToolStripButton1.Text = "ToolStripButton1"
+        '
+        'ToolStripButton2
+        '
+        Me.ToolStripButton2.AutoSize = False
+        Me.ToolStripButton2.BackColor = System.Drawing.Color.Transparent
+        Me.ToolStripButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.ToolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton2.Name = "ToolStripButton2"
+        Me.ToolStripButton2.Size = New System.Drawing.Size(50, 30)
+        Me.ToolStripButton2.Text = "ToolStripButton2"
+        '
+        'ToolStripLabel1
+        '
+        Me.ToolStripLabel1.Name = "ToolStripLabel1"
+        Me.ToolStripLabel1.Size = New System.Drawing.Size(89, 30)
+        Me.ToolStripLabel1.Text = "ToolStripLabel1"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -509,4 +540,7 @@ Partial Class Form1
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents WebBrowserEscape As WebBrowser
     Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents ToolStripButton2 As ToolStripButton
+    Friend WithEvents ToolStripLabel1 As ToolStripLabel
 End Class
