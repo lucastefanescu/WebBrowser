@@ -133,5 +133,11 @@
   <ItemGroup>
     <None Include="Resources\iconfinder_Home_32491.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_volume-down_3671907.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_volume-up_3671909.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
