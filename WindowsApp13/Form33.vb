@@ -3,14 +3,23 @@ Imports System.IO
 'imports systems for web icons
 
 Public Class Form1
+
+    Private Declare Sub keybd_event Lib "user 32" (ByVal volumeUpOrDown As Byte, ByVal v1 As Byte, ByVal v2 As Integer, ByVal v3 As Integer)
+    'takes volume control from "user 32" library
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cmbSearchEngines.Items.Add("Google")
+
+
+
         cmbSearchEngines.Items.Add("Youtube")
         cmbSearchEngines.Items.Add("Wikipedia")
         'adding different search engines
         cmbSearchEngines.SelectedIndex = 0
         'sets Index
 
+        lblDate.Text = Now
+        'sets date for respected day
     End Sub
 
 
@@ -81,5 +90,18 @@ Public Class Form1
     Private Sub BtnHome_Click(sender As Object, e As EventArgs) Handles BtnHome.Click
 
         WebBrowserEscape.Navigate(My.Settings.Homepage)
+
+    End Sub
+
+    Private Sub btnVolumeUp_Click(sender As Object, e As EventArgs) Handles btnVolumeUp.Click
+
+        Call keybd_event(System.Windows.Forms.Keys.VolumeUp, 0, 0, 0)
+
+    End Sub
+
+    Private Sub btnVolumeDown_Click(sender As Object, e As EventArgs) Handles btnVolumeDown.Click
+
+        Call keybd_event(System.Windows.Forms.Keys.VolumeDown, 0, 0, 0)
+
     End Sub
 End Class

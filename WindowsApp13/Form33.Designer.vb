@@ -59,14 +59,14 @@ Partial Class Form1
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.WebBrowserEscape = New System.Windows.Forms.WebBrowser()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
+        Me.lblDate = New System.Windows.Forms.ToolStripLabel()
         Me.btnBack = New System.Windows.Forms.ToolStripButton()
         Me.btnForward = New System.Windows.Forms.ToolStripButton()
         Me.btnReload = New System.Windows.Forms.ToolStripButton()
         Me.btnDownloads = New System.Windows.Forms.ToolStripButton()
         Me.BtnHome = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.btnVolumeDown = New System.Windows.Forms.ToolStripButton()
+        Me.btnVolumeUp = New System.Windows.Forms.ToolStripButton()
         Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrintToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrintPreviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -259,7 +259,7 @@ Partial Class Form1
         '
         Me.toolstripNavigator.BackColor = System.Drawing.Color.SkyBlue
         Me.toolstripNavigator.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.toolstripNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnBack, Me.btnForward, Me.txtUrl, Me.btnReload, Me.cmbSearchEngines, Me.txtUrlSearchEngines, Me.btnDownloads, Me.BtnHome, Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripLabel1})
+        Me.toolstripNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnBack, Me.btnForward, Me.txtUrl, Me.btnReload, Me.cmbSearchEngines, Me.txtUrlSearchEngines, Me.btnDownloads, Me.BtnHome, Me.btnVolumeDown, Me.btnVolumeUp, Me.lblDate})
         Me.toolstripNavigator.Location = New System.Drawing.Point(0, 24)
         Me.toolstripNavigator.Name = "toolstripNavigator"
         Me.toolstripNavigator.Size = New System.Drawing.Size(1498, 33)
@@ -326,23 +326,11 @@ Partial Class Form1
         Me.TabControl1.Size = New System.Drawing.Size(1498, 726)
         Me.TabControl1.TabIndex = 2
         '
-        'ToolStripButton2
+        'lblDate
         '
-        Me.ToolStripButton2.AutoSize = False
-        Me.ToolStripButton2.BackColor = System.Drawing.Color.Transparent
-        Me.ToolStripButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.ToolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton2.Image = Global.WindowsApp13.My.Resources.Resources.iconfinder_volume_up_3671909
-        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(50, 30)
-        Me.ToolStripButton2.Text = "ToolStripButton2"
-        '
-        'ToolStripLabel1
-        '
-        Me.ToolStripLabel1.Name = "ToolStripLabel1"
-        Me.ToolStripLabel1.Size = New System.Drawing.Size(89, 30)
-        Me.ToolStripLabel1.Text = "ToolStripLabel1"
+        Me.lblDate.ForeColor = System.Drawing.Color.White
+        Me.lblDate.Name = "lblDate"
+        Me.lblDate.Size = New System.Drawing.Size(0, 30)
         '
         'btnBack
         '
@@ -407,17 +395,29 @@ Partial Class Form1
         Me.BtnHome.Size = New System.Drawing.Size(50, 30)
         Me.BtnHome.Text = "ToolStripButton4"
         '
-        'ToolStripButton1
+        'btnVolumeDown
         '
-        Me.ToolStripButton1.AutoSize = False
-        Me.ToolStripButton1.BackColor = System.Drawing.Color.Transparent
-        Me.ToolStripButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton1.Image = Global.WindowsApp13.My.Resources.Resources.iconfinder_volume_down_3671907
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(50, 30)
-        Me.ToolStripButton1.Text = "ToolStripButton1"
+        Me.btnVolumeDown.AutoSize = False
+        Me.btnVolumeDown.BackColor = System.Drawing.Color.Transparent
+        Me.btnVolumeDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnVolumeDown.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btnVolumeDown.Image = Global.WindowsApp13.My.Resources.Resources.iconfinder_volume_down_3671907
+        Me.btnVolumeDown.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnVolumeDown.Name = "btnVolumeDown"
+        Me.btnVolumeDown.Size = New System.Drawing.Size(50, 30)
+        Me.btnVolumeDown.Text = "ToolStripButton1"
+        '
+        'btnVolumeUp
+        '
+        Me.btnVolumeUp.AutoSize = False
+        Me.btnVolumeUp.BackColor = System.Drawing.Color.Transparent
+        Me.btnVolumeUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnVolumeUp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btnVolumeUp.Image = Global.WindowsApp13.My.Resources.Resources.iconfinder_volume_up_3671909
+        Me.btnVolumeUp.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnVolumeUp.Name = "btnVolumeUp"
+        Me.btnVolumeUp.Size = New System.Drawing.Size(50, 30)
+        Me.btnVolumeUp.Text = "ToolStripButton2"
         '
         'OpenToolStripMenuItem
         '
@@ -542,7 +542,7 @@ Partial Class Form1
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents WebBrowserEscape As WebBrowser
     Friend WithEvents TabControl1 As TabControl
-    Friend WithEvents ToolStripButton1 As ToolStripButton
-    Friend WithEvents ToolStripButton2 As ToolStripButton
-    Friend WithEvents ToolStripLabel1 As ToolStripLabel
+    Friend WithEvents btnVolumeDown As ToolStripButton
+    Friend WithEvents btnVolumeUp As ToolStripButton
+    Friend WithEvents lblDate As ToolStripLabel
 End Class
