@@ -56,13 +56,25 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("www.google.com")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property Homepage() As String
             Get
                 Return CType(Me("Homepage"),String)
             End Get
             Set
                 Me("Homepage") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property HomePageOrBlankPage() As Byte
+            Get
+                Return CType(Me("HomePageOrBlankPage"),Byte)
+            End Get
+            Set
+                Me("HomePageOrBlankPage") = value
             End Set
         End Property
     End Class

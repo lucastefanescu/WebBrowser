@@ -18,8 +18,14 @@ Public Class Form1
         cmbSearchEngines.SelectedIndex = 0
         'sets Index
 
-        lblDate.Text = Now
-        'sets date for respected day
+        If My.Settings.HomePageOrBlankPage = 0 Then
+            WebBrowserEscape.Navigate(My.Settings.Homepage)
+
+            'go to homepage through advanced options
+        Else
+
+        End If
+
     End Sub
 
 
@@ -104,4 +110,16 @@ Public Class Form1
         Call keybd_event(System.Windows.Forms.Keys.VolumeDown, 0, 0, 0)
 
     End Sub
+
+    Private Sub OptionsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OptionsToolStripMenuItem.Click
+        frmproperties.Show()
+    End Sub
+
+    Private Sub tmrdate_Tick(sender As Object, e As EventArgs) Handles tmrdate.Tick
+
+        lblDate.Text = Now
+        'sets date for respected day
+    End Sub
 End Class
+
+

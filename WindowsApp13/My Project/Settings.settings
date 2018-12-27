@@ -3,7 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="Homepage" Type="System.String" Scope="User">
-      <Value Profile="(Default)">www.google.com</Value>
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="HomePageOrBlankPage" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">0</Value>
     </Setting>
   </Settings>
 </SettingsFile>
