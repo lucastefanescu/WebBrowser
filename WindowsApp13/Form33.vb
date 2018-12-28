@@ -51,6 +51,8 @@ Public Class Form1
 
         TabControl1.SelectedTab.Text = WebBrowserEscape.DocumentTitle.ToString
         'says the page name on the tab
+
+        History.lstHistory.Items.Add(txtUrl.Text)
     End Sub
     Private Sub txturl_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtUrl.KeyUp
         If e.KeyCode = Keys.Enter Then
@@ -61,7 +63,13 @@ Public Class Form1
     Private Sub webIcons()
         Dim wc As New WebClient
         Dim memorystream As New MemoryStream(wc.DownloadData("http://" & New Uri(WebBrowserEscape.Url.ToString).Host & "/favicon.ico"))
-        Dim icon As New Icon(memorystream)
+
+        Try
+            Dim icon As New Icon(memorystream)
+        Catch ex As Exception
+
+        End Try
+
 
         If ImageList1.Images.Count = -1 Then
             ImageList1.Images.Add(icon.ToBitmap)
@@ -119,6 +127,20 @@ Public Class Form1
 
         lblDate.Text = Now
         'sets date for respected day
+    End Sub
+
+    Private Sub HistorytoolstripMenuItem_Click(sender As Object, e As EventArgs) Handles HistoryToolStripMenuItem.Click
+        History.Show()
+    End Sub
+
+
+    Private Sub txtUrl_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtUrl.TextChanged
+        txtUrl.AutoCompleteCustomSource.Clear()
+        For i As Integer = 0 To History.lstHistory.Items.Count - 1
+            txtUrl.AutoCompleteCustomSource.Add(History.lstHistory.Items(i))
+
+            'autocompletes a Url when something is typed in the txt Url
+        Next
     End Sub
 End Class
 

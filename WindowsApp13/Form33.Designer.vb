@@ -55,7 +55,7 @@ Partial Class Form1
         Me.toolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BookmarksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HistoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.toolstripNavigator = New System.Windows.Forms.ToolStrip()
         Me.btnBack = New System.Windows.Forms.ToolStripButton()
@@ -83,7 +83,7 @@ Partial Class Form1
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.Black
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.HelpToolStripMenuItem, Me.BookmarksToolStripMenuItem, Me.HToolStripMenuItem, Me.ToolStripMenuItem1})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.HelpToolStripMenuItem, Me.BookmarksToolStripMenuItem, Me.HistoryToolStripMenuItem, Me.ToolStripMenuItem1})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1498, 24)
@@ -178,20 +178,20 @@ Partial Class Form1
         '
         Me.UndoToolStripMenuItem.Name = "UndoToolStripMenuItem"
         Me.UndoToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Z), System.Windows.Forms.Keys)
-        Me.UndoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.UndoToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
         Me.UndoToolStripMenuItem.Text = "&Undo"
         '
         'RedoToolStripMenuItem
         '
         Me.RedoToolStripMenuItem.Name = "RedoToolStripMenuItem"
         Me.RedoToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Y), System.Windows.Forms.Keys)
-        Me.RedoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RedoToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
         Me.RedoToolStripMenuItem.Text = "&Redo"
         '
         'toolStripSeparator3
         '
         Me.toolStripSeparator3.Name = "toolStripSeparator3"
-        Me.toolStripSeparator3.Size = New System.Drawing.Size(177, 6)
+        Me.toolStripSeparator3.Size = New System.Drawing.Size(141, 6)
         '
         'CutToolStripMenuItem
         '
@@ -199,7 +199,7 @@ Partial Class Form1
         Me.CutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.CutToolStripMenuItem.Name = "CutToolStripMenuItem"
         Me.CutToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.CutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CutToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
         Me.CutToolStripMenuItem.Text = "Cu&t"
         '
         'CopyToolStripMenuItem
@@ -208,7 +208,7 @@ Partial Class Form1
         Me.CopyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.CopyToolStripMenuItem.Name = "CopyToolStripMenuItem"
         Me.CopyToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.CopyToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CopyToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
         Me.CopyToolStripMenuItem.Text = "&Copy"
         '
         'PasteToolStripMenuItem
@@ -217,18 +217,18 @@ Partial Class Form1
         Me.PasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.PasteToolStripMenuItem.Name = "PasteToolStripMenuItem"
         Me.PasteToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.PasteToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PasteToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
         Me.PasteToolStripMenuItem.Text = "&Paste"
         '
         'toolStripSeparator4
         '
         Me.toolStripSeparator4.Name = "toolStripSeparator4"
-        Me.toolStripSeparator4.Size = New System.Drawing.Size(177, 6)
+        Me.toolStripSeparator4.Size = New System.Drawing.Size(141, 6)
         '
         'SelectAllToolStripMenuItem
         '
         Me.SelectAllToolStripMenuItem.Name = "SelectAllToolStripMenuItem"
-        Me.SelectAllToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SelectAllToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
         Me.SelectAllToolStripMenuItem.Text = "Select &All"
         '
         'ToolsToolStripMenuItem
@@ -242,13 +242,13 @@ Partial Class Form1
         'CustomizeToolStripMenuItem
         '
         Me.CustomizeToolStripMenuItem.Name = "CustomizeToolStripMenuItem"
-        Me.CustomizeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CustomizeToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
         Me.CustomizeToolStripMenuItem.Text = "&Customize"
         '
         'OptionsToolStripMenuItem
         '
         Me.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem"
-        Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
         Me.OptionsToolStripMenuItem.Text = "&Options"
         '
         'HelpToolStripMenuItem
@@ -295,12 +295,12 @@ Partial Class Form1
         Me.BookmarksToolStripMenuItem.Size = New System.Drawing.Size(78, 20)
         Me.BookmarksToolStripMenuItem.Text = "&Bookmarks"
         '
-        'HToolStripMenuItem
+        'HistoryToolStripMenuItem
         '
-        Me.HToolStripMenuItem.ForeColor = System.Drawing.Color.White
-        Me.HToolStripMenuItem.Name = "HToolStripMenuItem"
-        Me.HToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
-        Me.HToolStripMenuItem.Text = "&History"
+        Me.HistoryToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.HistoryToolStripMenuItem.Name = "HistoryToolStripMenuItem"
+        Me.HistoryToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
+        Me.HistoryToolStripMenuItem.Text = "&History"
         '
         'ToolStripMenuItem1
         '
@@ -347,6 +347,8 @@ Partial Class Form1
         '
         'txtUrl
         '
+        Me.txtUrl.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtUrl.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.txtUrl.AutoSize = False
         Me.txtUrl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtUrl.Name = "txtUrl"
@@ -459,6 +461,7 @@ Partial Class Form1
         Me.WebBrowserEscape.Location = New System.Drawing.Point(3, 3)
         Me.WebBrowserEscape.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowserEscape.Name = "WebBrowserEscape"
+        Me.WebBrowserEscape.ScriptErrorsSuppressed = True
         Me.WebBrowserEscape.Size = New System.Drawing.Size(1484, 693)
         Me.WebBrowserEscape.TabIndex = 0
         '
@@ -533,7 +536,7 @@ Partial Class Form1
     Friend WithEvents NewWindowToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents NewTabToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BookmarksToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents HToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents HistoryToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents toolstripNavigator As ToolStrip
     Friend WithEvents btnForward As ToolStripButton
