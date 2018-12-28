@@ -74,6 +74,7 @@ Partial Class Form1
         Me.WebBrowserEscape = New System.Windows.Forms.WebBrowser()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tmrdate = New System.Windows.Forms.Timer(Me.components)
+        Me.CloseTabToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.toolstripNavigator.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -92,7 +93,7 @@ Partial Class Form1
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PrivateWindowToolStripMenuItem, Me.NewWindowToolStripMenuItem, Me.NewTabToolStripMenuItem, Me.OpenToolStripMenuItem, Me.toolStripSeparator, Me.toolStripSeparator1, Me.PrintToolStripMenuItem, Me.PrintPreviewToolStripMenuItem, Me.toolStripSeparator2, Me.ExitToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewWindowToolStripMenuItem, Me.NewTabToolStripMenuItem, Me.CloseTabToolStripMenuItem, Me.PrivateWindowToolStripMenuItem, Me.OpenToolStripMenuItem, Me.toolStripSeparator, Me.toolStripSeparator1, Me.PrintToolStripMenuItem, Me.PrintPreviewToolStripMenuItem, Me.ExitToolStripMenuItem, Me.toolStripSeparator2})
         Me.FileToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
@@ -481,6 +482,12 @@ Partial Class Form1
         Me.tmrdate.Enabled = True
         Me.tmrdate.Interval = 1
         '
+        'CloseTabToolStripMenuItem
+        '
+        Me.CloseTabToolStripMenuItem.Name = "CloseTabToolStripMenuItem"
+        Me.CloseTabToolStripMenuItem.Size = New System.Drawing.Size(230, 22)
+        Me.CloseTabToolStripMenuItem.Text = "Close Tab"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -555,4 +562,5 @@ Partial Class Form1
     Friend WithEvents btnVolumeUp As ToolStripButton
     Friend WithEvents lblDate As ToolStripLabel
     Friend WithEvents tmrdate As Timer
+    Friend WithEvents CloseTabToolStripMenuItem As ToolStripMenuItem
 End Class

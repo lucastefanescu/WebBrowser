@@ -30,17 +30,20 @@ Public Class Form1
 
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
-        WebBrowserEscape.GoBack()
+        Dim browser As Class1 = Me.TabControl1.SelectedTab.Tag
+        browser.GoBack()
         'go back button
     End Sub
 
     Private Sub btnForward_Click(sender As Object, e As EventArgs) Handles btnForward.Click
-        WebBrowserEscape.GoForward()
+        Dim browser As Class1 = Me.TabControl1.SelectedTab.Tag
+        browser.GoForward()
         'go forward button
     End Sub
 
     Private Sub btnReload_Click(sender As Object, e As EventArgs) Handles btnReload.Click
-        WebBrowserEscape.Refresh()
+        Dim browser As Class1 = Me.TabControl1.SelectedTab.Tag
+        browser.Refresh()
         'refresh browser
     End Sub
 
@@ -55,8 +58,9 @@ Public Class Form1
         History.lstHistory.Items.Add(txtUrl.Text)
     End Sub
     Private Sub txturl_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtUrl.KeyUp
+        Dim browser As Class1 = Me.TabControl1.SelectedTab.Tag
         If e.KeyCode = Keys.Enter Then
-            WebBrowserEscape.Navigate(txtUrl.Text)
+            browser.Navigate(txtUrl.Text)
         End If
         'everytime navigate somewhere according to url clicking enter goes to url
     End Sub
@@ -83,18 +87,19 @@ Public Class Form1
     End Sub
 
     Private Sub txtUrlSearchEngines_KeyUp(sender As Object, e As KeyEventArgs) Handles txtUrlSearchEngines.KeyUp
+        Dim browser As Class1 = Me.TabControl1.SelectedTab.Tag
         Select Case (cmbSearchEngines.SelectedIndex)
             Case 0
                 If e.KeyCode = Keys.Enter Then
-                    WebBrowserEscape.Navigate("www.google.com/#q=" + txtUrlSearchEngines.Text)
+                    browser.Navigate("www.google.com/#q=" + txtUrlSearchEngines.Text)
                 End If
             Case 1
                 If e.KeyCode = Keys.Enter Then
-                    WebBrowserEscape.Navigate("http://www.youtube.com/results?search_query=" + txtUrlSearchEngines.Text)
+                    browser.Navigate("http://www.youtube.com/results?search_query=" + txtUrlSearchEngines.Text)
                 End If
             Case 2
                 If e.KeyCode = Keys.Enter Then
-                    WebBrowserEscape.Navigate("en.wikipedia.org/wiki" + txtUrlSearchEngines.Text)
+                    browser.Navigate("en.wikipedia.org/wiki" + txtUrlSearchEngines.Text)
                 End If
                 'allows search through small textbox through different search engines
 
@@ -142,6 +147,45 @@ Public Class Form1
             'autocompletes a Url when something is typed in the txt Url
         Next
     End Sub
+
+    Private Sub NewTabToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewTabToolStripMenuItem.Click
+        addTab(TabControl1)
+    End Sub
+
+    Private Sub CloseTabToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseTabToolStripMenuItem.Click
+
+        removetab()
+
+    End Sub
+
+    Public Sub addTab(ByRef TabControl)
+        Dim browser As New Class1
+        Dim tab As New TabPage
+        browser.Tag = tab
+        tab.Tag = browser
+        TabControl1.TabPages.Add(tab)
+        tab.Controls.Add(browser)
+        browser.Dock = DockStyle.Fill
+        browser.Navigate("www.google.com")
+    End Sub
+
+    Public Sub removetab()
+        If TabControl1.TabPages.Count <> 0 Then
+            TabControl1.TabPages.Remove(TabControl1.SelectedTab)
+
+        End If
+    End Sub
+
+    Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
+        Dim browser As Class1 = TabControl1.SelectedTab.Tag
+        Try
+            txtUrl.Text = browser.Url.Tostring
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class
+
+
 
 
