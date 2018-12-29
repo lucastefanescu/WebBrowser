@@ -8,18 +8,22 @@ Public Class Form1
     'takes volume control from "user 32" library
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
         cmbSearchEngines.Items.Add("Google")
-
-
-
         cmbSearchEngines.Items.Add("Youtube")
         cmbSearchEngines.Items.Add("Wikipedia")
         'adding different search engines
         cmbSearchEngines.SelectedIndex = 0
         'sets Index
 
+        addTab(TabControl1)
+        'adds tab automatically uponstart up 
+
         If My.Settings.HomePageOrBlankPage = 0 Then
-            WebBrowserEscape.Navigate(My.Settings.Homepage)
+
+            Dim browser As Class1 = Me.TabControl1.SelectedTab.Tag
+            browser.Navigate(My.Settings.Homepage)
 
             'go to homepage through advanced options
         Else
@@ -47,16 +51,6 @@ Public Class Form1
         'refresh browser
     End Sub
 
-    Private Sub WebBrowserEscape_Navigated(sender As Object, e As WebBrowserNavigatedEventArgs) Handles WebBrowserEscape.Navigated
-        txtUrl.Text = WebBrowserEscape.Url.ToString
-        webIcons()
-
-
-        TabControl1.SelectedTab.Text = WebBrowserEscape.DocumentTitle.ToString
-        'says the page name on the tab
-
-        History.lstHistory.Items.Add(txtUrl.Text)
-    End Sub
     Private Sub txturl_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtUrl.KeyUp
         Dim browser As Class1 = Me.TabControl1.SelectedTab.Tag
         If e.KeyCode = Keys.Enter Then
@@ -64,27 +58,7 @@ Public Class Form1
         End If
         'everytime navigate somewhere according to url clicking enter goes to url
     End Sub
-    Private Sub webIcons()
-        Dim wc As New WebClient
-        Dim memorystream As New MemoryStream(wc.DownloadData("http://" & New Uri(WebBrowserEscape.Url.ToString).Host & "/favicon.ico"))
 
-        Try
-            Dim icon As New Icon(memorystream)
-        Catch ex As Exception
-
-        End Try
-
-
-        If ImageList1.Images.Count = -1 Then
-            ImageList1.Images.Add(icon.ToBitmap)
-            TabControl1.SelectedTab.ImageIndex = 0
-
-        Else
-            ImageList1.Images.Clear()
-            ImageList1.Images.Add(icon.ToBitmap)
-            TabControl1.SelectedTab.ImageIndex = 0
-        End If
-    End Sub
 
     Private Sub txtUrlSearchEngines_KeyUp(sender As Object, e As KeyEventArgs) Handles txtUrlSearchEngines.KeyUp
         Dim browser As Class1 = Me.TabControl1.SelectedTab.Tag
@@ -107,25 +81,28 @@ Public Class Form1
     End Sub
 
     Private Sub BtnHome_Click(sender As Object, e As EventArgs) Handles BtnHome.Click
-
-        WebBrowserEscape.Navigate(My.Settings.Homepage)
+        Dim browser As Class1 = Me.TabControl1.SelectedTab.Tag
+        browser.Navigate(My.Settings.Homepage)
 
     End Sub
 
     Private Sub btnVolumeUp_Click(sender As Object, e As EventArgs) Handles btnVolumeUp.Click
 
         Call keybd_event(System.Windows.Forms.Keys.VolumeUp, 0, 0, 0)
+        'volume up
 
     End Sub
 
     Private Sub btnVolumeDown_Click(sender As Object, e As EventArgs) Handles btnVolumeDown.Click
 
         Call keybd_event(System.Windows.Forms.Keys.VolumeDown, 0, 0, 0)
+        'volume down
 
     End Sub
 
     Private Sub OptionsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OptionsToolStripMenuItem.Click
         frmproperties.Show()
+
     End Sub
 
     Private Sub tmrdate_Tick(sender As Object, e As EventArgs) Handles tmrdate.Tick
@@ -136,6 +113,9 @@ Public Class Form1
 
     Private Sub HistorytoolstripMenuItem_Click(sender As Object, e As EventArgs) Handles HistoryToolStripMenuItem.Click
         History.Show()
+        'when clicked, shows history tab
+
+
     End Sub
 
 
@@ -184,8 +164,38 @@ Public Class Form1
 
         End Try
     End Sub
-End Class
 
+    Private Sub NewWindowToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewWindowToolStripMenuItem.Click
+        Dim newwindow As New Form1
+        newwindow.Show()
+    End Sub
+
+    Private Sub UndoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UndoToolStripMenuItem.Click
+        txtUrl.Undo()
+    End Sub
+
+    Private Sub RedoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RedoToolStripMenuItem.Click
+        txtUrl.ClearUndo()
+    End Sub
+
+    Private Sub CutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CutToolStripMenuItem.Click
+        txtUrl.Cut()
+    End Sub
+
+    Private Sub CopyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CopyToolStripMenuItem.Click
+        txtUrl.Copy()
+    End Sub
+
+    Private Sub PasteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PasteToolStripMenuItem.Click
+        txtUrl.Paste()
+    End Sub
+
+    Private Sub SelectAllToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SelectAllToolStripMenuItem.Click
+        txtUrl.SelectAll()
+    End Sub
+
+
+End Class
 
 
 

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,22 +20,23 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PrivateWindowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewWindowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewTabToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CloseTabToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PrivateWindowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.toolStripSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.toolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.PrintToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrintPreviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.toolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.toolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UndoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RedoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -56,7 +57,6 @@ Partial Class Form1
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BookmarksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HistoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.toolstripNavigator = New System.Windows.Forms.ToolStrip()
         Me.btnBack = New System.Windows.Forms.ToolStripButton()
         Me.btnForward = New System.Windows.Forms.ToolStripButton()
@@ -70,21 +70,16 @@ Partial Class Form1
         Me.btnVolumeUp = New System.Windows.Forms.ToolStripButton()
         Me.lblDate = New System.Windows.Forms.ToolStripLabel()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.WebBrowserEscape = New System.Windows.Forms.WebBrowser()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tmrdate = New System.Windows.Forms.Timer(Me.components)
-        Me.CloseTabToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.toolstripNavigator.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
-        Me.TabControl1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.Black
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.HelpToolStripMenuItem, Me.BookmarksToolStripMenuItem, Me.HistoryToolStripMenuItem, Me.ToolStripMenuItem1})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.HelpToolStripMenuItem, Me.BookmarksToolStripMenuItem, Me.HistoryToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1498, 24)
@@ -99,14 +94,6 @@ Partial Class Form1
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "&File"
         '
-        'PrivateWindowToolStripMenuItem
-        '
-        Me.PrivateWindowToolStripMenuItem.Name = "PrivateWindowToolStripMenuItem"
-        Me.PrivateWindowToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
-            Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.PrivateWindowToolStripMenuItem.Size = New System.Drawing.Size(230, 22)
-        Me.PrivateWindowToolStripMenuItem.Text = "Pri&vate Window"
-        '
         'NewWindowToolStripMenuItem
         '
         Me.NewWindowToolStripMenuItem.Name = "NewWindowToolStripMenuItem"
@@ -119,6 +106,20 @@ Partial Class Form1
         Me.NewTabToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.W), System.Windows.Forms.Keys)
         Me.NewTabToolStripMenuItem.Size = New System.Drawing.Size(230, 22)
         Me.NewTabToolStripMenuItem.Text = "New &Tab"
+        '
+        'CloseTabToolStripMenuItem
+        '
+        Me.CloseTabToolStripMenuItem.Name = "CloseTabToolStripMenuItem"
+        Me.CloseTabToolStripMenuItem.Size = New System.Drawing.Size(230, 22)
+        Me.CloseTabToolStripMenuItem.Text = "Close Tab"
+        '
+        'PrivateWindowToolStripMenuItem
+        '
+        Me.PrivateWindowToolStripMenuItem.Name = "PrivateWindowToolStripMenuItem"
+        Me.PrivateWindowToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
+            Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
+        Me.PrivateWindowToolStripMenuItem.Size = New System.Drawing.Size(230, 22)
+        Me.PrivateWindowToolStripMenuItem.Text = "Pri&vate Window"
         '
         'OpenToolStripMenuItem
         '
@@ -156,16 +157,16 @@ Partial Class Form1
         Me.PrintPreviewToolStripMenuItem.Size = New System.Drawing.Size(230, 22)
         Me.PrintPreviewToolStripMenuItem.Text = "Print Pre&view"
         '
-        'toolStripSeparator2
-        '
-        Me.toolStripSeparator2.Name = "toolStripSeparator2"
-        Me.toolStripSeparator2.Size = New System.Drawing.Size(227, 6)
-        '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(230, 22)
         Me.ExitToolStripMenuItem.Text = "E&xit"
+        '
+        'toolStripSeparator2
+        '
+        Me.toolStripSeparator2.Name = "toolStripSeparator2"
+        Me.toolStripSeparator2.Size = New System.Drawing.Size(227, 6)
         '
         'EditToolStripMenuItem
         '
@@ -303,13 +304,6 @@ Partial Class Form1
         Me.HistoryToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
         Me.HistoryToolStripMenuItem.Text = "&History"
         '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.ForeColor = System.Drawing.Color.White
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(44, 20)
-        Me.ToolStripMenuItem1.Text = "&Help"
-        '
         'toolstripNavigator
         '
         Me.toolstripNavigator.BackColor = System.Drawing.Color.SkyBlue
@@ -445,30 +439,8 @@ Partial Class Form1
         Me.ImageList1.ImageSize = New System.Drawing.Size(16, 16)
         Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
         '
-        'TabPage1
-        '
-        Me.TabPage1.Controls.Add(Me.WebBrowserEscape)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 23)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1490, 699)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "TabPage1"
-        Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'WebBrowserEscape
-        '
-        Me.WebBrowserEscape.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WebBrowserEscape.Location = New System.Drawing.Point(3, 3)
-        Me.WebBrowserEscape.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowserEscape.Name = "WebBrowserEscape"
-        Me.WebBrowserEscape.ScriptErrorsSuppressed = True
-        Me.WebBrowserEscape.Size = New System.Drawing.Size(1484, 693)
-        Me.WebBrowserEscape.TabIndex = 0
-        '
         'TabControl1
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.ImageList = Me.ImageList1
         Me.TabControl1.Location = New System.Drawing.Point(0, 57)
@@ -481,12 +453,6 @@ Partial Class Form1
         '
         Me.tmrdate.Enabled = True
         Me.tmrdate.Interval = 1
-        '
-        'CloseTabToolStripMenuItem
-        '
-        Me.CloseTabToolStripMenuItem.Name = "CloseTabToolStripMenuItem"
-        Me.CloseTabToolStripMenuItem.Size = New System.Drawing.Size(230, 22)
-        Me.CloseTabToolStripMenuItem.Text = "Close Tab"
         '
         'Form1
         '
@@ -505,8 +471,6 @@ Partial Class Form1
         Me.MenuStrip1.PerformLayout()
         Me.toolstripNavigator.ResumeLayout(False)
         Me.toolstripNavigator.PerformLayout()
-        Me.TabPage1.ResumeLayout(False)
-        Me.TabControl1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -544,7 +508,6 @@ Partial Class Form1
     Friend WithEvents NewTabToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BookmarksToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HistoryToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents toolstripNavigator As ToolStrip
     Friend WithEvents btnForward As ToolStripButton
     Friend WithEvents txtUrl As ToolStripTextBox
@@ -555,8 +518,6 @@ Partial Class Form1
     Friend WithEvents BtnHome As ToolStripButton
     Friend WithEvents btnBack As ToolStripButton
     Friend WithEvents ImageList1 As ImageList
-    Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents WebBrowserEscape As WebBrowser
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents btnVolumeDown As ToolStripButton
     Friend WithEvents btnVolumeUp As ToolStripButton
