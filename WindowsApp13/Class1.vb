@@ -23,4 +23,10 @@
 
 
     End Sub
+
+
+    Public Sub New()
+        Me.ScriptErrorsSuppressed = True
+        'prevents script errors
+    End Sub
 End Class

@@ -72,6 +72,10 @@ Partial Class Form1
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tmrdate = New System.Windows.Forms.Timer(Me.components)
+        Me.lstName = New System.Windows.Forms.ListBox()
+        Me.lstUrl = New System.Windows.Forms.ListBox()
+        Me.ListBox3 = New System.Windows.Forms.ListBox()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.MenuStrip1.SuspendLayout()
         Me.toolstripNavigator.SuspendLayout()
         Me.SuspendLayout()
@@ -454,11 +458,49 @@ Partial Class Form1
         Me.tmrdate.Enabled = True
         Me.tmrdate.Interval = 1
         '
+        'lstName
+        '
+        Me.lstName.FormattingEnabled = True
+        Me.lstName.Location = New System.Drawing.Point(607, 0)
+        Me.lstName.Name = "lstName"
+        Me.lstName.Size = New System.Drawing.Size(120, 95)
+        Me.lstName.TabIndex = 3
+        '
+        'lstUrl
+        '
+        Me.lstUrl.FormattingEnabled = True
+        Me.lstUrl.Location = New System.Drawing.Point(723, 0)
+        Me.lstUrl.Name = "lstUrl"
+        Me.lstUrl.Size = New System.Drawing.Size(120, 95)
+        Me.lstUrl.TabIndex = 4
+        '
+        'ListBox3
+        '
+        Me.ListBox3.FormattingEnabled = True
+        Me.ListBox3.Location = New System.Drawing.Point(840, 0)
+        Me.ListBox3.Name = "ListBox3"
+        Me.ListBox3.Size = New System.Drawing.Size(120, 95)
+        Me.ListBox3.TabIndex = 5
+        '
+        'ToolStrip1
+        '
+        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 758)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(1498, 25)
+        Me.ToolStrip1.TabIndex = 6
+        Me.ToolStrip1.Text = "ToolStrip1"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1498, 783)
+        Me.Controls.Add(Me.ToolStrip1)
+        Me.Controls.Add(Me.ListBox3)
+        Me.Controls.Add(Me.lstUrl)
+        Me.Controls.Add(Me.lstName)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.toolstripNavigator)
         Me.Controls.Add(Me.MenuStrip1)
@@ -524,4 +566,8 @@ Partial Class Form1
     Friend WithEvents lblDate As ToolStripLabel
     Friend WithEvents tmrdate As Timer
     Friend WithEvents CloseTabToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents lstName As ListBox
+    Friend WithEvents lstUrl As ListBox
+    Friend WithEvents ListBox3 As ListBox
+    Friend WithEvents ToolStrip1 As ToolStrip
 End Class

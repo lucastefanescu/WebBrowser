@@ -7,6 +7,17 @@ Public Class Form1
     Private Declare Sub keybd_event Lib "user 32" (ByVal volumeUpOrDown As Byte, ByVal v1 As Byte, ByVal v2 As Integer, ByVal v3 As Integer)
     'takes volume control from "user 32" library
 
+
+    Private Sub Form1_formclosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+
+        For Each favouritename As String In lstName.Items
+            File.AppendAllText("C:\Users\pluto\Desktop\New folder (3)", favouritename & vbNewLine)
+        Next
+
+        For Each favouriteURL As String In lstUrl.Items
+            File.AppendAllText("C:\Users\pluto\Desktop\New folder (3)", favouriteURL & vbNewLine)
+        Next
+    End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
@@ -30,6 +41,35 @@ Public Class Form1
 
         End If
 
+        Try
+            For Each url As String In File.ReadAllLines("C:\Users\pluto\Desktop\New folder (3)")
+                ListBox3.Items.Add(url)
+            Next
+        Catch ex As Exception
+
+        End Try
+
+        Try
+            ListBox3.SelectedIndex = 0
+
+        Catch ex As Exception
+
+        End Try
+
+        Try
+            For Each name As String In File.ReadAllLines("C:\Users\pluto\Desktop\New folder (3)")
+                Dim newbookmark As New ToolStripButton
+                newbookmark.Text = name
+
+                newbookmark.Tag = ListBox3.SelectedItem.ToString
+                ToolStrip1.Items.Add(newbookmark)
+                ListBox3.SelectedIndex = ListBox3.SelectedIndex + 1
+            Next
+        Catch ex As Exception
+
+        End Try
+
+        createdbookclic()
     End Sub
 
 
@@ -147,6 +187,10 @@ Public Class Form1
         tab.Controls.Add(browser)
         browser.Dock = DockStyle.Fill
         browser.Navigate("www.google.com")
+        'adds a new tab
+
+        TabControl1.SelectedTab = tab
+        'everytime a new tab is opened, the browser automatically switches to that tab
     End Sub
 
     Public Sub removetab()
@@ -194,7 +238,47 @@ Public Class Form1
         txtUrl.SelectAll()
     End Sub
 
+    Private Sub BookmarksToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BookmarksToolStripMenuItem.Click
+        addbookmarks()
+    End Sub
 
+    Private Sub addbookmarks()
+        Dim browser As WebBrowser = TabControl1.SelectedTab.Tag
+
+        Dim newbookmark As New ToolStripButton
+        newbookmark.Text = TabControl1.SelectedTab.Text
+        newbookmark.Tag = browser.Url
+        ToolStrip1.Items.Add(newbookmark)
+        lstName.Items.Add(TabControl1.SelectedTab.Text)
+        lstUrl.Items.Add(browser.Url.ToString)
+        'adds bookmarks as buttons to toolstrip
+
+        AddHandler newbookmark.Click, AddressOf newbookmarkClick
+    End Sub
+
+    Private Sub newbookmarkClick(sender As Object, e As EventArgs)
+        Dim browser As WebBrowser = TabControl1.SelectedTab.Tag
+
+        If TypeOf sender Is ToolStripButton Then
+            browser.Navigate(CType(sender, ToolStripButton).Tag)
+        End If
+    End Sub
+    Private Sub createdbookclic()
+        For Each item As ToolStripButton In ToolStrip1.Items
+            AddHandler item.Click, AddressOf bookclick
+        Next
+    End Sub
+
+    Private Sub bookclick(sender As Object, e As EventArgs)
+        txtUrl.Text = CType(sender, ToolStripButton).Tag
+        booknav()
+    End Sub
+
+    Private Sub booknav()
+        Dim browser As WebBrowser = TabControl1.SelectedTab.Tag
+        browser.Navigate(txtUrl.Text)
+    End Sub
+    'All handlers to control toolstrip buttons
 End Class
 
 
