@@ -86,7 +86,7 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.HelpToolStripMenuItem, Me.BookmarksToolStripMenuItem, Me.HistoryToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1498, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1784, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -315,7 +315,7 @@ Partial Class Form1
         Me.toolstripNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnBack, Me.btnForward, Me.txtUrl, Me.btnReload, Me.cmbSearchEngines, Me.txtUrlSearchEngines, Me.btnDownloads, Me.BtnHome, Me.btnVolumeDown, Me.btnVolumeUp, Me.lblDate})
         Me.toolstripNavigator.Location = New System.Drawing.Point(0, 24)
         Me.toolstripNavigator.Name = "toolstripNavigator"
-        Me.toolstripNavigator.Size = New System.Drawing.Size(1498, 33)
+        Me.toolstripNavigator.Size = New System.Drawing.Size(1784, 33)
         Me.toolstripNavigator.TabIndex = 1
         Me.toolstripNavigator.Text = "ToolStrip1"
         '
@@ -448,9 +448,10 @@ Partial Class Form1
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.ImageList = Me.ImageList1
         Me.TabControl1.Location = New System.Drawing.Point(0, 57)
+        Me.TabControl1.MinimumSize = New System.Drawing.Size(500, 500)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1498, 726)
+        Me.TabControl1.Size = New System.Drawing.Size(1784, 855)
         Me.TabControl1.TabIndex = 2
         '
         'tmrdate
@@ -461,34 +462,34 @@ Partial Class Form1
         'lstName
         '
         Me.lstName.FormattingEnabled = True
-        Me.lstName.Location = New System.Drawing.Point(607, 0)
+        Me.lstName.Location = New System.Drawing.Point(1116, 0)
         Me.lstName.Name = "lstName"
-        Me.lstName.Size = New System.Drawing.Size(120, 95)
+        Me.lstName.Size = New System.Drawing.Size(120, 30)
         Me.lstName.TabIndex = 3
         '
         'lstUrl
         '
         Me.lstUrl.FormattingEnabled = True
-        Me.lstUrl.Location = New System.Drawing.Point(723, 0)
+        Me.lstUrl.Location = New System.Drawing.Point(1232, 0)
         Me.lstUrl.Name = "lstUrl"
-        Me.lstUrl.Size = New System.Drawing.Size(120, 95)
+        Me.lstUrl.Size = New System.Drawing.Size(120, 30)
         Me.lstUrl.TabIndex = 4
         '
         'ListBox3
         '
         Me.ListBox3.FormattingEnabled = True
-        Me.ListBox3.Location = New System.Drawing.Point(840, 0)
+        Me.ListBox3.Location = New System.Drawing.Point(1348, 0)
         Me.ListBox3.Name = "ListBox3"
-        Me.ListBox3.Size = New System.Drawing.Size(120, 95)
+        Me.ListBox3.Size = New System.Drawing.Size(120, 30)
         Me.ListBox3.TabIndex = 5
         '
         'ToolStrip1
         '
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 758)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 887)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(1498, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(1784, 25)
         Me.ToolStrip1.TabIndex = 6
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -496,7 +497,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1498, 783)
+        Me.ClientSize = New System.Drawing.Size(1784, 912)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.ListBox3)
         Me.Controls.Add(Me.lstUrl)
@@ -506,6 +507,7 @@ Partial Class Form1
         Me.Controls.Add(Me.MenuStrip1)
         Me.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.MinimumSize = New System.Drawing.Size(500, 500)
         Me.Name = "Form1"
         Me.Text = "Escape"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

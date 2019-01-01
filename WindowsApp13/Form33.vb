@@ -11,11 +11,11 @@ Public Class Form1
     Private Sub Form1_formclosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
 
         For Each favouritename As String In lstName.Items
-            File.AppendAllText("C:\Users\pluto\Desktop\New folder (3)", favouritename & vbNewLine)
+            File.AppendAllText("C:\Users\pluto\Desktop\New folder (3)\23.txt", favouritename & vbNewLine)
         Next
 
         For Each favouriteURL As String In lstUrl.Items
-            File.AppendAllText("C:\Users\pluto\Desktop\New folder (3)", favouriteURL & vbNewLine)
+            File.AppendAllText("C:\Users\pluto\Desktop\New folder (3)\23.txt", favouriteURL & vbNewLine)
         Next
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -42,7 +42,7 @@ Public Class Form1
         End If
 
         Try
-            For Each url As String In File.ReadAllLines("C:\Users\pluto\Desktop\New folder (3)")
+            For Each url As String In File.ReadAllLines("C:\Users\pluto\Desktop\New folder (3)\23.txt")
                 ListBox3.Items.Add(url)
             Next
         Catch ex As Exception
@@ -57,7 +57,7 @@ Public Class Form1
         End Try
 
         Try
-            For Each name As String In File.ReadAllLines("C:\Users\pluto\Desktop\New folder (3)")
+            For Each name As String In File.ReadAllLines("C:\Users\pluto\Desktop\New folder (3)\23.txt")
                 Dim newbookmark As New ToolStripButton
                 newbookmark.Text = name
 
